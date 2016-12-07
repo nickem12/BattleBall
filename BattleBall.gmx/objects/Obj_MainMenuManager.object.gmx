@@ -59,7 +59,7 @@ if(Next_Room &amp;&amp; room == rm_menu)                            //If input a
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(Title_Screen, 0, room_width / 2, room_height / 2, 0.3, 0.3, 0, c_white, 1);
+            <string>draw_sprite_ext(Title_Screen, 0, room_width / 2, room_height / 2, 0.5, 0.5, 0, c_white, 1);
 
 var d_col = make_colour_rgb(200,200,200);
 draw_set_colour(d_col);
