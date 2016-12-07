@@ -133,6 +133,7 @@
           <sprite>sprites\spr_RV_Final</sprite>
           <sprite>sprites\spr_Truck_Final</sprite>
         </sprites>
+        <sprite>sprites\spr_bg</sprite>
       </sprites>
       <sprites name="Effects">
         <sprite>sprites\spr_Smoke</sprite>
@@ -655,6 +656,7 @@
         <object>objects\obj_gravel</object>
       </objects>
       <object>objects\Invisible_Wall</object>
+      <object>objects\obj_bg</object>
     </objects>
     <objects name="Player">
       <object>objects\Obj_player</object>
