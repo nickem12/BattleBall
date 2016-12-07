@@ -182,6 +182,20 @@
                 <sprite>sprites\spr_Gavin_Run_Blue</sprite>
               </sprites>
             </sprites>
+            <sprites name="Red">
+              <sprites name="Idle">
+                <sprite>sprites\spr_Gavin_Idle_Red</sprite>
+              </sprites>
+              <sprites name="Fall">
+                <sprite>sprites\spr_Gavin_Fall_Red</sprite>
+              </sprites>
+              <sprites name="Jump">
+                <sprite>sprites\spr_Gavin_Jump_Red</sprite>
+              </sprites>
+              <sprites name="Run">
+                <sprite>sprites\spr_Gavin_Run_Red</sprite>
+              </sprites>
+            </sprites>
           </sprites>
         </sprites>
         <sprites name="Heavy">
@@ -202,7 +216,16 @@
             </sprites>
             <sprites name="Red">
               <sprites name="Idle">
-                <sprite>sprites\spr_Phelan_Idle_Orange</sprite>
+                <sprite>sprites\spr_Phelan_Idle_Red</sprite>
+              </sprites>
+              <sprites name="Fall">
+                <sprite>sprites\spr_Phelan_Fall_Red</sprite>
+              </sprites>
+              <sprites name="Jump">
+                <sprite>sprites\spr_Phelan_Jump_Red</sprite>
+              </sprites>
+              <sprites name="Run">
+                <sprite>sprites\spr_Phelan_Run_Red</sprite>
               </sprites>
             </sprites>
           </sprites>
@@ -223,6 +246,20 @@
                 <sprite>sprites\spr_Jakob_Fall_Blue</sprite>
               </sprites>
             </sprites>
+            <sprites name="Red">
+              <sprites name="Idle">
+                <sprite>sprites\spr_Jakob_Idle_Red</sprite>
+              </sprites>
+              <sprites name="Fall">
+                <sprite>sprites\spr_Jakob_Fall_Red</sprite>
+              </sprites>
+              <sprites name="Jump">
+                <sprite>sprites\spr_Jakob_Jump_Red</sprite>
+              </sprites>
+              <sprites name="Run">
+                <sprite>sprites\spr_Jakob_Run_Red</sprite>
+              </sprites>
+            </sprites>
           </sprites>
         </sprites>
         <sprites name="Recon">
@@ -239,6 +276,20 @@
               </sprites>
               <sprites name="Idle">
                 <sprite>sprites\spr_Payton_Idle_Blue</sprite>
+              </sprites>
+            </sprites>
+            <sprites name="Red">
+              <sprites name="Idle">
+                <sprite>sprites\spr_Payton_Idle_Red</sprite>
+              </sprites>
+              <sprites name="Fall">
+                <sprite>sprites\spr_Payton_Fall_Red</sprite>
+              </sprites>
+              <sprites name="Jump">
+                <sprite>sprites\spr_Payton_Jump_Red</sprite>
+              </sprites>
+              <sprites name="Run">
+                <sprite>sprites\spr_Payton_Run_Red</sprite>
               </sprites>
             </sprites>
           </sprites>
