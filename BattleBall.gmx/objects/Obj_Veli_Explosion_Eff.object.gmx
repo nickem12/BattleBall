@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -32,7 +32,7 @@ image_speed = 0.5;  //Set the image size
 Explosion_Set = false;
 myAngle = 0;
 curImage = 0;
-FrameRate = room_speed * 0.3;
+FrameRate = room_speed * 0.05;
 
 //Variables that are needed to be set
 mySpeed = 0;
@@ -40,6 +40,36 @@ XDir = 0;
 YDir = 0;
 myImage = noone;
 
+audio_em = audio_emitter_create();
+var SoundToPlay = choose(snd_explosion1, snd_explosion2, snd_explosion3, RETRO_Explosion_LoFi_06);
+
+audio_emitter_pitch(audio_em,random_range(0.9,1.1));                        //Vary the pitch
+audio_emitter_gain(audio_em, random_range(0.3, 0.5));                       //Vary the gain (the volume)
+audio_play_sound_on(audio_em, SoundToPlay, false,5);      
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy the object
+audio_emitter_free(audio_em);
 </string>
           </argument>
         </arguments>
@@ -63,10 +93,11 @@ myImage = noone;
           <argument>
             <kind>1</kind>
             <string>curImage++;
-if(curImage &gt; sprite_get_number(myImage))
+if(curImage &gt;= sprite_get_number(myImage))
 {
     instance_destroy();
 }
+alarm[0] = FrameRate;
 </string>
           </argument>
         </arguments>
@@ -128,7 +159,7 @@ else
             <string>///Draw the explosion
 if(Explosion_Set)
 {
-    draw_sprite_ext(myImage, curImage, x,y,1,1,myAngle, c_white, 1);
+    draw_sprite_ext(myImage, curImage, x,y,1.5,1.5,myAngle, c_white, 1);
 }
 </string>
           </argument>

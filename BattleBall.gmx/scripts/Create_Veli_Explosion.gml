@@ -40,23 +40,23 @@ else
         with(Inst)
         {
             myImage = choose(spr_Long_Curved_Explosion_1_Blue, spr_Long_Curved_Explosion_2_Blue, spr_Long_Straight_Explosion_1_Blue, spr_Long_Straight_Explosion_2_Blue, spr_Short_Straight_1_Blue, spr_Short_Straight_2_Blue);
-            mySpeed = random_range(2,10);
-            XDIR = random_range(-10,10);
-            YDIR = random_range(-10,10);
+            mySpeed = random_range(4,20);
+            XDIR = random_range(-20,20);
+            YDIR = random_range(-20,20);
         }
         with(Inst2)
         {
             myImage = choose(spr_Long_Curved_Explosion_1_Blue, spr_Long_Curved_Explosion_2_Blue, spr_Long_Straight_Explosion_1_Blue, spr_Long_Straight_Explosion_2_Blue, spr_Short_Straight_1_Blue, spr_Short_Straight_2_Blue);
-            mySpeed = random_range(2,10);
-            XDIR = random_range(-10,10);
-            YDIR = random_range(-10,10);
+            mySpeed = random_range(4,20);
+            XDIR = random_range(-20,20);
+            YDIR = random_range(-20,20);
         }
         with(Inst3)
         {
             myImage = choose(spr_Long_Curved_Explosion_1_Blue, spr_Long_Curved_Explosion_2_Blue, spr_Long_Straight_Explosion_1_Blue, spr_Long_Straight_Explosion_2_Blue, spr_Short_Straight_1_Blue, spr_Short_Straight_2_Blue);
-            mySpeed = random_range(2,10);
-            XDIR = random_range(-10,10);
-            YDIR = random_range(-10,10);
+            mySpeed = random_range(4,20);
+            XDIR = random_range(-20,20);
+            YDIR = random_range(-20,20);
         }
     }
     else
@@ -64,23 +64,23 @@ else
         with(Inst)
         {
             myImage = choose(spr_Long_Curved_Explosion_1_Red, spr_Long_Curved_Explosion_2_Red, spr_Long_Straight_Explosion_1_Red, spr_Long_Straight_Explosion_2_Red, spr_Short_Straight_1_Red, spr_Short_Straight_2_Red);
-            mySpeed = random_range(2,10);
-            XDIR = random_range(-10,10);
-            YDIR = random_range(-10,10);
+            mySpeed = random_range(4,20);
+            XDIR = random_range(-20,20);
+            YDIR = random_range(-20,20);
         }
         with(Inst2)
         {
             myImage = choose(spr_Long_Curved_Explosion_1_Red, spr_Long_Curved_Explosion_2_Red, spr_Long_Straight_Explosion_1_Red, spr_Long_Straight_Explosion_2_Red, spr_Short_Straight_1_Red, spr_Short_Straight_2_Red);
-            mySpeed = random_range(2,10);
-            XDIR = random_range(-10,10);
-            YDIR = random_range(-10,10);
+            mySpeed = random_range(4,20);
+            XDIR = random_range(-20,20);
+            YDIR = random_range(-20,20);
         }
         with(Inst3)
         {
             myImage = choose(spr_Long_Curved_Explosion_1_Red, spr_Long_Curved_Explosion_2_Red, spr_Long_Straight_Explosion_1_Red, spr_Long_Straight_Explosion_2_Red, spr_Short_Straight_1_Red, spr_Short_Straight_2_Red);
-            mySpeed = random_range(2,10);
-            XDIR = random_range(-10,10);
-            YDIR = random_range(-10,10);
+            mySpeed = random_range(4,20);
+            XDIR = random_range(-20,20);
+            YDIR = random_range(-20,20);
         }
     }
         
