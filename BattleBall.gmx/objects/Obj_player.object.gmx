@@ -237,6 +237,31 @@ GrenadesLeft = 2;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Drawing variables
+Cur_Frame = 0;
+Frame_Timer = room_speed * 0.1;
+
+Last_State = noone;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Other generic variables
 audio_em = audio_emitter_create();          //This is for everything else
 audio_s = audio_emitter_create();           //This is for shooting sounds
@@ -302,6 +327,33 @@ PlayedPrechargeSound = false;
             <string>///Player is dead
 audio_emitter_free(audio_em);
 audio_emitter_free(audio_s);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///The Frame Rate Timer
+//This can be removed when the character sprites are scaled up manually
+Cur_Frame++;
+Cur_Frame = Cur_Frame % sprite_get_number(sprite_index);
+alarm[11] = Frame_Timer;
 </string>
           </argument>
         </arguments>
@@ -591,10 +643,107 @@ hasShot = false;            //The player has not shot
             <kind>1</kind>
             <string>///Execute State
 GetInput();                                 //Get the input from the game pad or keyboard
-script_execute(state);                      //Execute the script that correcsponds with the current player
+//script_execute(state);                      //Execute the script that correcsponds with the current player
                                                 //state. This is a common way in game maker to do states.
                                                 //Think of this as enum switching. Currently the player only
                                                 //has one state (Movement) other states could be added quite easily.
+Move();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Dash
+if (dash &amp;&amp; can_dash &amp;&amp; (axis_lh || axis_lv))                                               //If the player has hit the dash button, can dash and is aiming with the left joystick in some direction.
+{
+
+    ResetCharge();                                                                          //Reset the charge
+
+    var xamount, yamount;                                                                   //The amount for the x and y to move by
+    if(axis_left)                                                                           //If the left joystick is pointing to the left
+    {
+        xamount = -axis_left;                                                               //Set the x amount appropriately
+    }    
+    else
+    {
+        xamount = axis_right;                                                               //Set the x amount appropriately
+    }
+    
+    if(axis_up)                                                                             //If the left joystick is pointing up
+    {
+        yamount = -axis_up;                                                                 //Set the y amount appropriately
+    }
+    else
+    {
+        yamount = axis_down;                                                                //Set the y amount appropriately
+    }
+    
+    physics_apply_impulse(x,y, xamount * dash_amount, yamount * dash_amount);               //apply the dash physics impulse
+    
+    alarm[1] = dash_cool_down;                                                              //Set the dash cool down timer for the player
+    drawall = false;
+    can_dash = false;                                                                       //The player cannot dash again
+    is_dashing = true;                                                                      //The player is currently dashing
+    alarm[2] = dashing_time;   
+    alarm[3] = room_speed * .165;
+    alarm[4] = alarm[3] + 10;
+    alarm[5] = alarm[4] + 10;
+    alarm[6] = alarm[5] + 10;                                                             //Set the timer for the currenly dashing (used for dash effect)
+    
+    if(smash_attack &amp;&amp; !isSmashing &amp;&amp; vaxis &gt;= 0.7)
+    {
+        isSmashing = true;
+        alarm[8] = SmashCooldown;
+        
+        audio_emitter_pitch(audio_em,random_range(0.5,1.4));                                    //Set audio_em and play the dash effect
+        audio_emitter_gain(audio_em, random_range(0.3, 0.6));
+        audio_play_sound_on(audio_em, snd_powerup1, false,3);
+    }
+    else
+    {
+        audio_emitter_pitch(audio_em,random_range(0.5,1.4));                                    //Set audio_em and play the dash effect
+        audio_emitter_gain(audio_em, random_range(0.3, 0.6));
+        audio_play_sound_on(audio_em, SWIPE_Whoosh_02, false,3);
+    }
+    
+}
+else if (!can_dash &amp;&amp; is_dashing)                                                           //If the player can't dash and is dashing
+{
+    if(playerNum == 1)
+    {
+        Create_Dash_Effect("Red");                                                                   //Create the dash effect
+    }
+    else if (playerNum == 2)
+    {
+        Create_Dash_Effect("Blue");
+    }
+}
+
+if(isSmashing)
+{
+    instance_create(x,y,Obj_Sparkles_Effect);
+
+    if(!is_dashing)
+    {
+        isSmashing = false;
+    }
+}
+
 </string>
           </argument>
         </arguments>
@@ -805,102 +954,6 @@ else
 
 
 
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Dash
-if (dash &amp;&amp; can_dash &amp;&amp; (axis_lh || axis_lv))                                               //If the player has hit the dash button, can dash and is aiming with the left joystick in some direction.
-{
-
-    ResetCharge();                                                                          //Reset the charge
-
-    var xamount, yamount;                                                                   //The amount for the x and y to move by
-    if(axis_left)                                                                           //If the left joystick is pointing to the left
-    {
-        xamount = -axis_left;                                                               //Set the x amount appropriately
-    }    
-    else
-    {
-        xamount = axis_right;                                                               //Set the x amount appropriately
-    }
-    
-    if(axis_up)                                                                             //If the left joystick is pointing up
-    {
-        yamount = -axis_up;                                                                 //Set the y amount appropriately
-    }
-    else
-    {
-        yamount = axis_down;                                                                //Set the y amount appropriately
-    }
-    
-    physics_apply_impulse(x,y, xamount * dash_amount, yamount * dash_amount);               //apply the dash physics impulse
-    
-    alarm[1] = dash_cool_down;                                                              //Set the dash cool down timer for the player
-    drawall = false;
-    can_dash = false;                                                                       //The player cannot dash again
-    is_dashing = true;                                                                      //The player is currently dashing
-    alarm[2] = dashing_time;   
-    alarm[3] = room_speed * .165;
-    alarm[4] = alarm[3] + 10;
-    alarm[5] = alarm[4] + 10;
-    alarm[6] = alarm[5] + 10;                                                             //Set the timer for the currenly dashing (used for dash effect)
-    
-    if(smash_attack &amp;&amp; !isSmashing &amp;&amp; vaxis &gt;= 0.7)
-    {
-        isSmashing = true;
-        alarm[8] = SmashCooldown;
-        
-        audio_emitter_pitch(audio_em,random_range(0.5,1.4));                                    //Set audio_em and play the dash effect
-        audio_emitter_gain(audio_em, random_range(0.3, 0.6));
-        audio_play_sound_on(audio_em, snd_powerup1, false,3);
-    }
-    else
-    {
-        audio_emitter_pitch(audio_em,random_range(0.5,1.4));                                    //Set audio_em and play the dash effect
-        audio_emitter_gain(audio_em, random_range(0.3, 0.6));
-        audio_play_sound_on(audio_em, SWIPE_Whoosh_02, false,3);
-    }
-    
-}
-else if (!can_dash &amp;&amp; is_dashing)                                                           //If the player can't dash and is dashing
-{
-    if(playerNum == 1)
-    {
-        Create_Dash_Effect("Red");                                                                   //Create the dash effect
-    }
-    else if (playerNum == 2)
-    {
-        Create_Dash_Effect("Blue");
-    }
-}
-
-if(isSmashing)
-{
-    instance_create(x,y,Obj_Sparkles_Effect);
-
-    if(!is_dashing)
-    {
-        isSmashing = false;
-    }
-}
 
 </string>
           </argument>
@@ -1134,10 +1187,6 @@ else
           <argument>
             <kind>1</kind>
             <string>///Checking for Collision
-if(is_dashing)
-{
-    is_dashing = false;
-}
 
 if(isSmashing)
 {
@@ -1152,6 +1201,10 @@ if(isSmashing)
     isDashing = false;
 }
 
+if(other.y &gt; y)
+{
+    Sprite_State = "Walk_Left";
+}
 
 if(other.y &gt; y &amp;&amp; (IsJumping  || (y &gt; yprevious &amp;&amp; (SolidContactThisFrame &amp;&amp; !SolidContactLastFrame))))
 {
@@ -1166,8 +1219,10 @@ if(other.y &gt; y &amp;&amp; (IsJumping  || (y &gt; yprevious &amp;&amp; (SolidC
         audio_play_sound_on(audio_em, Land_on_ground_2, false,2);
         LandSoundCounter = 0;
     }
-    
+    SpriteState = "Walk_Left";
     NumOfJumps = 0;
+    
+    phy_position_y += 5;
 }
     
 </string>
@@ -1262,27 +1317,44 @@ if(other.y &gt; y &amp;&amp; (IsJumping  || (y &gt; yprevious &amp;&amp; (SolidC
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>///Draw the player and components
+
+
+//==========Temp scaling=======
+image_x = image_xscale;
+image_y = image_yscale;
+
+
+image_xscale *= 1.6;
+image_yscale *= 1.6;
+draw_sprite_ext(sprite_index, Cur_Frame, phy_position_x,phy_position_y - 16,image_xscale, image_yscale, 0, c_white, 1);
+
+image_xscale = image_x;
+image_yscale = image_y;
+//==========================
+
+
+//draw_self();
 
 if (drawhalf)
 {
-draw_sprite_part(dash_cooldown, 0, 0, 0, 3, sprite_height, 700,700);
+    draw_sprite_part(dash_cooldown, 0, 0, 0, 3, sprite_height, 700,700);
 }
 if (drawhalf1)
 {
-draw_sprite_part(dash_cooldown, 0, 0, 0, 6, sprite_height, 700,700);
+    draw_sprite_part(dash_cooldown, 0, 0, 0, 6, sprite_height, 700,700);
 }
 if (drawhalf2)
 {
-draw_sprite_part(dash_cooldown, 0, 0, 0, 9, sprite_height, 700,700);
+    draw_sprite_part(dash_cooldown, 0, 0, 0, 9, sprite_height, 700,700);
 }
 if (drawhalf3)
 {
-draw_sprite_part(dash_cooldown, 0, 0, 0, 12, sprite_height, 700,700);
+    draw_sprite_part(dash_cooldown, 0, 0, 0, 12, sprite_height, 700,700);
 }
 if(drawall)
 {
-draw_sprite_part(dash_cooldown, 0, 0, 0, 16, sprite_height, 700,700);
+    draw_sprite_part(dash_cooldown, 0, 0, 0, 16, sprite_height, 700,700);
 }
 
 if(playerNum == 1)
@@ -1301,7 +1373,7 @@ else if (playerNum == 2)
   </events>
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>1</PhysicsObjectShape>
+  <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>2</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
@@ -1311,9 +1383,7 @@ else if (playerNum == 2)
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>28,0</point>
-    <point>28,36</point>
-    <point>0,36</point>
+    <point>16,18</point>
+    <point>18,18</point>
   </PhysicsShapePoints>
 </object>

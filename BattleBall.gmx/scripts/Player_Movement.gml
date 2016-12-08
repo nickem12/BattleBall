@@ -82,6 +82,11 @@ if(haxis < 0)                                                                   
      SpriteState = "Walk_Left";                                                     //Set the sprite state
 }
 
+if(left || right)
+{
+    SpriteState = "Walk_Left";
+}
+
 if(haxis == 0)                                                                      //if we are not moving (pressing in a direction)
 {
     if(isPlayingWalkingSound)                                                       //If we are playing the walking sound
@@ -98,10 +103,10 @@ if(not IsMoving) SpriteState = "Idle";                                          
 
 SolidContactLastFrame = SolidContactThisFrame;                                      //Set the last frame solid contact to the current one.
 
-if(place_meeting(x,y+1,Obj_Solid) || (place_meeting(x,y+1,Obj_Ball) && global.Ball.y > y)) //If there is a meeting below the player with a Obj_Solid or Obj_Ball
+if(place_meeting(phy_position_x,phy_position_y,Obj_Solid) || (place_meeting(phy_position_x,phy_position_y+1,Obj_Ball) && global.Ball.y > y)) //If there is a meeting below the player with a Obj_Solid or Obj_Ball
 {
     SolidContactThisFrame = true;                                                           //Set contact this frame
-    if(place_meeting(phy_position_x,phy_position_y +1,obj_metal) && !place_meeting(phy_position_xprevious, phy_position_yprevious + 1, obj_metal))  //If there is a new place meeting with metal
+    if(place_meeting(phy_position_x,phy_position_y,obj_metal) && !place_meeting(phy_position_xprevious, phy_position_yprevious, obj_metal))  //If there is a new place meeting with metal
     {
         audio_emitter_gain(audio_em, 0.1);                                                                                                          //Set the gain
         audio_emitter_pitch(audio_em, random_range(0.9, 1.1));                                                                                      //Set the pitch
@@ -109,6 +114,8 @@ if(place_meeting(x,y+1,Obj_Solid) || (place_meeting(x,y+1,Obj_Ball) && global.Ba
         Can_Play_Metal_Sound = false;                                                                                                               //We can no longer play the metal sound
         alarm[9] = Metal_Sound_Time;                                                                                                                //Set the metal alarm
     }
+    if(!left && !right)
+        SpriteState = "Idle";
     
 }
 else                                                                                                                                                //Otherwise we are not incontact with a solid or ball
@@ -158,4 +165,18 @@ else if (up_release)                                                        //If
 {
     CanJump = true;                                                         //We can no longer jump    
 }
+
+if(position_meeting(phy_position_x, phy_position_y + 20, Obj_Solid) && ! place_meeting(phy_position_x, phy_position_y, Obj_Solid))
+{
+    phy_position_y++;
+    if(left || right)
+    {
+        SpriteState = "Walk_Left";
+    }
+    else
+    {
+        SpriteState = "Idle";
+    }
+}
+
 

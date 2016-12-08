@@ -1,29 +1,93 @@
 ///Player_Animate()
+if(Last_State != noone)
+{
+    if(Last_State != SpriteState) 
+    {
+        Cur_Frame = Cur_Frame % sprite_get_number(sprite_index);
+        alarm[11] = Frame_Timer;
+    }
+}
+
+Last_State = SpriteState;
 
 if(playerNum == 1)                                          //If we are the first player
 {
     if(SpriteState == "Idle")                               //If the player state is idle
     {
-        sprite_index = player_idle;                         //Set the sprite to the idle sprite
+        switch(global.Current_Class)
+        {
+            case 0:         //Pistol
+                sprite_index = spr_Gavin_Idle_Blue;
+                break;
+            case 1:         //Machinegun
+                sprite_index = spr_Jakob_Idle_Blue;
+                break;
+            case 2:         //Minigun
+                sprite_index = spr_Phelan_Idle_Blue;
+                break;
+            case 3:         //Sniper
+                sprite_index = spr_Payton_Idle_Blue;
+                break;
+        }
+    
     }
-    else if (SpriteState == "Walk_Left")                    //If the player state is walk left state
+    else if (SpriteState == "Walk_Left" || SpriteState == "Walk_Right")            //If the player state is walk left state
     {
-        sprite_index = player_walk;                         //Set the sprite to the walking sprite
-    }
-    else if (SpriteState == "Walk_Right")                   //If the player state is walk right state
-    {
-        sprite_index = player_walk;                         //Set the sprite to the walking sprite
+        switch(global.Current_Class)
+        {
+            case 0:         //Pistol
+                sprite_index = spr_Gavin_Run_Blue;
+                break;
+            case 1:         //Machinegun
+                sprite_index = spr_Jakob_Run_Blue;
+                break;
+            case 2:         //Minigun
+                sprite_index = spr_Phelan_Run_Blue;
+                break;
+            case 3:         //Sniper
+                sprite_index = spr_Payton_Run_Blue;
+                break;
+        }
+        
     }
     else if (SpriteState == "Jump")                         //If the sprite state is the jumping state
     {
-        sprite_index = player_jump;                         //Set the sprite to the jumping sprite
-        if(phy_position_y > phy_position_yprevious)         //If we are falling
+    
+        if(phy_position_y < phy_position_yprevious)
         {
-            image_index = 1;                                //Set the sprite to the second image index
+            switch(global.Current_Class)
+            {
+                case 0:         //Pistol
+                    sprite_index = spr_Gavin_Jump_Blue;
+                    break;
+                case 1:         //Machinegun
+                    sprite_index = spr_Jakob_Jump_Blue;
+                    break;
+                case 2:         //Minigun
+                    sprite_index = spr_Phelan_Jump_Blue;
+                    break;
+                case 3:         //Sniper
+                   sprite_index = spr_Payton_Jump_Blue;
+                    break;
+            }
         }
-        else                                                //Otherwise 
+        else
         {
-            image_index = 0;                                //Set the index to the first image index
+            switch(global.Current_Class)
+            {
+                case 0:         //Pistol
+                    sprite_index = spr_Gavin_Fall_Blue;
+                    break;
+                case 1:         //Machinegun
+                    sprite_index = spr_Jakob_Fall_Blue;
+                    break;
+                case 2:         //Minigun
+                    sprite_index = spr_Phelan_Fall_Blue;
+                    break;
+                case 3:         //Sniper
+                   sprite_index = spr_Payton_Fall_Blue;
+                    break;
+            }
         }
     }
 }
@@ -31,26 +95,79 @@ else if (playerNum == 2)                                    //If we are the seco
 {
     if(SpriteState == "Idle")                               //If we are in the idle sprite state
     {
-        sprite_index = player_idle_p2;                      //Change sprite to the p2 idle sprite
+         switch(global.Current_Class)
+        {
+            case 0:         //Pistol
+                sprite_index = spr_Gavin_Idle_Red;
+                break;
+            case 1:         //Machinegun
+                sprite_index = spr_Jakob_Idle_Red;
+                break;
+            case 2:         //Minigun
+                sprite_index = spr_Phelan_Idle_Red;
+                break;
+            case 3:         //Sniper
+                sprite_index = spr_Payton_Idle_Red;
+                break;
+        }
     }
-    else if (SpriteState == "Walk_Left")                    //If we are in the walking left sprite state
+    else if (SpriteState == "Walk_Left" || SpriteState == "Walk_Right")                    //If we are in the walking left sprite state
     {
-        sprite_index = player_walk_p2;                      //Set the sprite to player walking sprite
-    }
-    else if (SpriteState == "Walk_Right")                   //If we are in the walking right sprite state
-    {
-        sprite_index = player_walk_p2;                      //Set the sprite equal to the p2 player walking sprite
+        switch(global.Current_Class)
+        {
+            case 0:         //Pistol
+                sprite_index = spr_Gavin_Run_Red;
+                break;
+            case 1:         //Machinegun
+                sprite_index = spr_Jakob_Run_Red;
+                break;
+            case 2:         //Minigun
+                sprite_index = spr_Phelan_Run_Red;
+                break;
+            case 3:         //Sniper
+                sprite_index = spr_Payton_Run_Red;
+                break;
+        }
     }
     else if (SpriteState == "Jump")                         //Else if we are in the jumping sprite state
     {
-        sprite_index = player_jump_p2;                      //Set the sprite equal to the p2 player jump sprite
-        if(phy_position_y > phy_position_yprevious)         //If we are falling
+        if(phy_position_y < phy_position_yprevious)
         {
-            image_index = 1;                                //Set equal to the falling index
+            switch(global.Current_Class)
+            {
+                case 0:         //Pistol
+                    sprite_index = spr_Gavin_Jump_Red;
+                    break;
+                case 1:         //Machinegun
+                    sprite_index = spr_Jakob_Jump_Red;
+                    break;
+                case 2:         //Minigun
+                    sprite_index = spr_Phelan_Jump_Red;
+                    break;
+                case 3:         //Sniper
+                   sprite_index = spr_Payton_Jump_Red;
+                    break;
+            }
         }
         else
         {
-            image_index = 0;                                //Set equal to the jumping index
+            switch(global.Current_Class)
+            {
+                case 0:         //Pistol
+                    sprite_index = spr_Gavin_Fall_Red;
+                    break;
+                case 1:         //Machinegun
+                    sprite_index = spr_Jakob_Fall_Red;
+                    break;
+                case 2:         //Minigun
+                    sprite_index = spr_Phelan_Fall_Red;
+                    break;
+                case 3:         //Sniper
+                   sprite_index = spr_Payton_Fall_Red;
+                    break;
+            }
         }
     }
 }
+
+
