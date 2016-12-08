@@ -738,6 +738,7 @@ if(isSmashing)
 {
     instance_create(x,y,Obj_Sparkles_Effect);
 
+    
     if(!is_dashing)
     {
         isSmashing = false;
@@ -1191,11 +1192,20 @@ else
 if(isSmashing)
 {
     global.Explosion = instance_create(x,y, Obj_Explosion);
+    if(playerNum == 1)
+    {
+        Create_Veli_Explosion(x,y,true);
+    }
+    else
+    {
+        Create_Veli_Explosion(x,y,false);
+    }
+    
     with(global.Explosion)
     {
         detonate = true;
     }
-    Create_Explosion_eff();
+    //Create_Explosion_eff();
         
     isSmashing = false;
     isDashing = false;

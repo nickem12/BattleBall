@@ -128,7 +128,7 @@ else
             <string>///Draw the explosion
 if(Explosion_Set)
 {
-    draw_sprite_ext(myImage, CurImage, x,y,1,1,myAngle, c_white, 1);
+    draw_sprite_ext(myImage, curImage, x,y,1,1,myAngle, c_white, 1);
 }
 </string>
           </argument>
