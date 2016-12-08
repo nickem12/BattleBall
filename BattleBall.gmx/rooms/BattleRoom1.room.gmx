@@ -89,9 +89,11 @@
     <instance objName="Obj_Large_Picture" x="504" y="200" name="inst_042198A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Picture" x="808" y="200" name="inst_E755E0D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Fireplace" x="656" y="251" name="inst_354A8DA4" locked="0" code="" scaleX="0.898989915847778" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
-    <instance objName="Obj_Net_Top" x="96" y="56" name="inst_E0B3A88E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Obj_Net_Top_2" x="1168" y="64" name="inst_A0345F5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Net_Top" x="89" y="112" name="inst_E0B3A88E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Net_Top_2" x="1192" y="104" name="inst_A0345F5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_SecondFloor_Outside" x="666" y="179" name="inst_FA2A388E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Blue_Beam" x="89" y="385" name="inst_3FB109A7" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Red_Beam" x="1191" y="378" name="inst_494C973D" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

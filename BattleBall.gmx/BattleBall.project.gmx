@@ -396,6 +396,10 @@
         <sprite>sprites\LevelUp_2</sprite>
         <sprite>sprites\LevelUp_3</sprite>
       </sprites>
+      <sprites name="Goals">
+        <sprite>sprites\spr_Blue_Beam</sprite>
+        <sprite>sprites\spr_Red_Beam</sprite>
+      </sprites>
     </sprites>
     <sprites name="Menu Items">
       <sprites name="LevelBoxes">
@@ -752,6 +756,8 @@
       <object>objects\Obj_Container</object>
       <object>objects\Obj_Net_Top</object>
       <object>objects\Obj_Net_Top_2</object>
+      <object>objects\Obj_Blue_Beam</object>
+      <object>objects\Obj_Red_Beam</object>
     </objects>
     <objects name="Player">
       <object>objects\Obj_player</object>

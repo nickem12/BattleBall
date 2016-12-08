@@ -37,7 +37,7 @@ hasBeenShot = false;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="Obj_Net">
+    <event eventtype="4" ename="Obj_Blue_Beam">
       <action>
         <libid>1</libid>
         <id>603</id>
