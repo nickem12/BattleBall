@@ -94,10 +94,17 @@
         <sprite>sprites\spr_Wooden_Fence</sprite>
         <sprite>sprites\spr_groundd</sprite>
         <sprite>sprites\spr_T_Bar</sprite>
+        <sprite>sprites\spr_FirePlace</sprite>
         <sprite>sprites\spr_Chain_link_Fence</sprite>
         <sprite>sprites\spr_Flood_Light</sprite>
+        <sprite>sprites\spr_Large_Picture</sprite>
+        <sprite>sprites\spr_Small_Table</sprite>
         <sprite>sprites\spr_Ventalation_System</sprite>
+        <sprite>sprites\spr_Radio</sprite>
+        <sprite>sprites\spr_Picture</sprite>
+        <sprite>sprites\spr_Container</sprite>
         <sprite>sprites\spr_Desk_and_Lamp</sprite>
+        <sprite>sprites\spr_Vent</sprite>
         <sprite>sprites\spr_barrel</sprite>
         <sprite>sprites\spr_Chair_TV</sprite>
         <sprite>sprites\spr_Boxs</sprite>
@@ -110,6 +117,7 @@
             <sprite>sprites\spr_SecondFloor_Inside</sprite>
             <sprite>sprites\spr_Second_Floor_Window</sprite>
             <sprite>sprites\spr_Second_Floor_Raise</sprite>
+            <sprite>sprites\spr_Second_Floor_Outside</sprite>
           </sprites>
           <sprites name="First Floor">
             <sprite>sprites\spr_First_Floor</sprite>
@@ -137,6 +145,10 @@
       </sprites>
       <sprites name="Effects">
         <sprite>sprites\spr_Smoke</sprite>
+      </sprites>
+      <sprites name="Red_Goal">
+        <sprite>sprites\spr_Goal_Red_Bottom</sprite>
+        <sprite>sprites\spr_Goal_Red_Top</sprite>
       </sprites>
     </sprites>
     <sprites name="Title">
@@ -667,6 +679,7 @@
     </objects>
     <objects name="Level">
       <object>objects\Obj_Ball</object>
+      <object>objects\Obj_Vent</object>
       <object>objects\Obj_Speed_Pickup</object>
       <object>objects\Obj_Solid</object>
       <object>objects\Obj_Gun_Crate</object>
@@ -681,6 +694,9 @@
         <object>objects\Obj_Pillar</object>
         <object>objects\Obj_Barrel</object>
         <object>objects\Obj_Ground</object>
+        <object>objects\Obj_SecondFloor_Outside</object>
+        <object>objects\Obj_Picture</object>
+        <object>objects\Obj_Fireplace</object>
         <object>objects\Obj_Car</object>
         <object>objects\Obj_Fence</object>
         <object>objects\obj_Chain_Link_Fence</object>
@@ -698,6 +714,9 @@
         <object>objects\obj_Table_Lamp</object>
         <object>objects\obj_Light</object>
         <object>objects\obj_Scorebard_Second_Floor</object>
+        <object>objects\Obj_Small_Table</object>
+        <object>objects\Obj_Radio</object>
+        <object>objects\Obj_Large_Picture</object>
       </objects>
       <objects name="Material Types">
         <object>objects\obj_metal</object>
@@ -706,6 +725,9 @@
       </objects>
       <object>objects\Invisible_Wall</object>
       <object>objects\obj_bg</object>
+      <object>objects\Obj_Container</object>
+      <object>objects\Obj_Net_Top</object>
+      <object>objects\Obj_Net_Top_2</object>
     </objects>
     <objects name="Player">
       <object>objects\Obj_player</object>
