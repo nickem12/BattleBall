@@ -333,6 +333,28 @@
         <sprite>sprites\Explosion_Orange_1_spr</sprite>
         <sprite>sprites\Explosion_Blue_2_spr</sprite>
         <sprite>sprites\Explosion_Blue_1_spr</sprite>
+        <sprites name="Blue">
+          <sprite>sprites\spr_Explosion_1_Blue</sprite>
+          <sprite>sprites\spr_Explosion_2_Blue</sprite>
+          <sprite>sprites\spr_Long_Curved_Explosion_1_Blue</sprite>
+          <sprite>sprites\spr_Long_Curved_Explosion_2_Blue</sprite>
+          <sprite>sprites\spr_Long_Straight_Explosion_1_Blue</sprite>
+          <sprite>sprites\spr_Long_Straight_Explosion_2_Blue</sprite>
+          <sprite>sprites\spr_Short_Straight_1_Blue</sprite>
+          <sprite>sprites\spr_Short_Straight_2_Blue</sprite>
+        </sprites>
+        <sprites name="Red">
+          <sprite>sprites\spr_Explosion_1_Red</sprite>
+          <sprite>sprites\spr_Explosion_2_Red</sprite>
+          <sprite>sprites\spr_Long_Curved_Explosion_1_Red</sprite>
+          <sprite>sprites\spr_Long_Curved_Explosion_2_Red</sprite>
+          <sprite>sprites\spr_Long_Straight_Explosion_1_Red</sprite>
+          <sprite>sprites\spr_Long_Straight_Explosion_2_Red</sprite>
+          <sprite>sprites\spr_Short_Curved_Explosion_1_Red</sprite>
+          <sprite>sprites\spr_Short_Curved_Explosion_2_Red</sprite>
+          <sprite>sprites\spr_Short_Straight_1_Red</sprite>
+          <sprite>sprites\spr_Short_Straight_2_Red</sprite>
+        </sprites>
       </sprites>
       <sprites name="Particles">
         <sprite>sprites\spr_chargeup_par</sprite>
@@ -532,6 +554,7 @@
       <script>scripts\Shake_Screen.gml</script>
       <script>scripts\Create_Explosion_eff.gml</script>
       <script>scripts\CreateChargeupParticle.gml</script>
+      <script>scripts\Create_Veli_Explosion.gml</script>
     </scripts>
     <scripts name="Input">
       <script>scripts\GetClassInput.gml</script>
@@ -651,6 +674,7 @@
         <object>objects\Obj_Confetti</object>
       </objects>
       <object>objects\Obj_LevelUp_Effect</object>
+      <object>objects\Obj_Veli_Explosion_Eff</object>
     </objects>
     <objects name="Bullets">
       <object>objects\Obj_Bullet_Parent</object>
