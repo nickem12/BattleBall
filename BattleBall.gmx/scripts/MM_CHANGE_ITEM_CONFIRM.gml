@@ -13,6 +13,7 @@ switch(myEditingType)
             myMenuMode = MM_EDIT_CLASS;
             myDrawMode = MM_EDIT_CLASS_DRAW;
         }
+        break;
     case EditingType.GUNS:
         var Value = global.Num_Guns_Per_Type;
         switch(global.Class_Type[Current_Class_Option])
