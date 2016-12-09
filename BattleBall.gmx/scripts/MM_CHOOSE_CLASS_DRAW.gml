@@ -1,4 +1,20 @@
 ///MM_CHOOSE_CLASS_DRAW()
+switch(global.Class_Type[global.Current_Class])
+{
+    case "Pistol":
+        draw_sprite_ext(spr_Gavin_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+    case "MachineGun":
+        draw_sprite_ext(spr_Jakob_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+    case "Minigun":
+        draw_sprite_ext(spr_Phelan_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+    case "Sniper":
+        draw_sprite_ext(spr_Payton_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+}
+
 draw_sprite_ext(back_panel, 0, 0,0, room_width / 3 * 2 - 200, room_height, 0, c_white, 0.56); //Draw the back panel
 
 draw_set_font(Main_Menu_Font);                                                      //Set the font

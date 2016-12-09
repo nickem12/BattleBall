@@ -1,4 +1,21 @@
 ///MM_MAIN_DRAW()
+
+switch(global.Class_Type[global.Current_Class])
+{
+    case "Pistol":
+        draw_sprite_ext(spr_Gavin_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+    case "MachineGun":
+        draw_sprite_ext(spr_Jakob_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+    case "Minigun":
+        draw_sprite_ext(spr_Phelan_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+    case "Sniper":
+        draw_sprite_ext(spr_Payton_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+}
+
 draw_set_font(Main_Menu_Font);
 DRAW_BARS();
 
@@ -89,4 +106,7 @@ switch(global.Current_Class)
         draw_text_colour(ClassInfoX + 10, ClassInfoY - 7, "Sniper : " + string(global.SniperExp) + " / " + string(CalculateExp(global.SniperLvl)) + " xp", c_white, c_white, c_white, c_white, 1);
         break;
 }
+
+
+
 

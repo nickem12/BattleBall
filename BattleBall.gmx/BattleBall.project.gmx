@@ -236,6 +236,9 @@
                 <sprite>sprites\spr_Gavin_Run_Red</sprite>
               </sprites>
             </sprites>
+            <sprites name="Still">
+              <sprite>sprites\spr_Gavin_Still</sprite>
+            </sprites>
           </sprites>
         </sprites>
         <sprites name="Heavy">
@@ -267,6 +270,9 @@
               <sprites name="Run">
                 <sprite>sprites\spr_Phelan_Run_Red</sprite>
               </sprites>
+            </sprites>
+            <sprites name="Still">
+              <sprite>sprites\spr_Phelan_Still</sprite>
             </sprites>
           </sprites>
         </sprites>
@@ -300,6 +306,9 @@
                 <sprite>sprites\spr_Jakob_Run_Red</sprite>
               </sprites>
             </sprites>
+            <sprites name="Still">
+              <sprite>sprites\spr_Jakob_Still</sprite>
+            </sprites>
           </sprites>
         </sprites>
         <sprites name="Recon">
@@ -331,6 +340,9 @@
               <sprites name="Run">
                 <sprite>sprites\spr_Payton_Run_Red</sprite>
               </sprites>
+            </sprites>
+            <sprites name="Still">
+              <sprite>sprites\spr_Payton_Still</sprite>
             </sprites>
           </sprites>
         </sprites>

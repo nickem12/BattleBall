@@ -1,5 +1,7 @@
 ///DRAW_BARS()
 ///Draw the bars
+
+
 draw_line_width_colour(-1,0,room_width, 0, room_height / 8, c_black, c_black);                               //Draw the top bar
 draw_line_width_colour(-1,room_height, room_width, room_height, room_height / 8, c_black, c_black);          //Drop the bottom bar
 

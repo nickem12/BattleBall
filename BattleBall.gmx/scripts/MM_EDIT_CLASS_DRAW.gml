@@ -1,5 +1,21 @@
 ///MM_EDIT_CLASS_DRAW()
 ///MM_CHOOSE_CLASS_DRAW()
+
+switch(global.Class_Type[global.Current_Class])
+{
+    case "Pistol":
+        draw_sprite_ext(spr_Gavin_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+    case "MachineGun":
+        draw_sprite_ext(spr_Jakob_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+    case "Minigun":
+        draw_sprite_ext(spr_Phelan_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+    case "Sniper":
+        draw_sprite_ext(spr_Payton_Still, 0, 1400, 700, 0.5,0.5,0,c_white,1);
+        break;
+}
 draw_sprite_ext(back_panel, 0, 300,0, room_width / 3 * 2 - 500, room_height, 0, c_white, 0.56); //Draw the back panel
 
 draw_set_font(Main_Menu_Font);                                                      //Set the font
@@ -165,4 +181,6 @@ if(myEditingType == EditingType.PERKS)
     draw_set_font(Perk_Desc_Font);
     draw_text_colour(N_x - 150, N_y + 100, global.Perk_Desc[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]], m_col, m_col, m_col, m_col, 1);
 }
+
+
 
