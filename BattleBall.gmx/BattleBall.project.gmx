@@ -402,6 +402,7 @@
       </sprites>
       <sprites name="Lights">
         <sprite>sprites\spr_FloodLight_Light</sprite>
+        <sprite>sprites\spr_Indoor_Light</sprite>
         <sprite>sprites\spr_Moonlight</sprite>
       </sprites>
     </sprites>
@@ -686,6 +687,7 @@
       <objects name="Lights">
         <object>objects\Obj_FloodLight_Light</object>
         <object>objects\Obj_Moonlight</object>
+        <object>objects\Obj_Indoor_Light</object>
       </objects>
     </objects>
     <objects name="Bullets">
