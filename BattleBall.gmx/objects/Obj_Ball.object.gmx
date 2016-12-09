@@ -68,7 +68,7 @@ if (phy_position_x &lt; room_width/2)
     instance_create(global.player2.x, global.player2.y, Obj_Confetti);
 }
 
-var SpawnPoint = choose(1,2,3);
+var SpawnPoint = choose(1,2);
 switch(SpawnPoint)
 {
     case 1:
@@ -76,12 +76,8 @@ switch(SpawnPoint)
         phy_position_y = startYPosition;
         break;
     case 2:
-        phy_position_x = 276;
-        phy_position_y = 76;
-        break;
-    case 3:
-        phy_position_x = 940;
-        phy_position_y = 80;
+        phy_position_x = 650;
+        phy_position_y = 600;
         break;
 }
 
