@@ -54,7 +54,9 @@ hasBeenShot = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (phy_position_x &gt; room_width/2)
+            <string>Create_Explosion_eff();
+
+if (phy_position_x &gt; room_width/2)
 {
     var inst = instance_create(x,y,Obj_Score_Effect);
     global.player1_score++;
