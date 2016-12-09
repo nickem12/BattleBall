@@ -66,7 +66,7 @@ speed_up = false;
 IsJumping = false;                 //Player is not jumping when created
 //JumpingPower = -500;               //Assign the power of the players jump, (Maybe different for different classes)
 NumOfJumps = 0;                    //Just counter how many times the player jumps
-JumpingPowerY = -1000;             //Assign the power of the players jump, (Maybe different for different classes)
+JumpingPowerY = -2250;             //Assign the power of the players jump, (Maybe different for different classes)
 CanJump = true;                    //Boolean to determine if the player is aloud to jump
 ConsecutiveJumps = 2;              //Double jump(Maybe different for different classes, should alter JumpingPower if altering ConsecutiveJumps)
 
@@ -162,8 +162,8 @@ canShoot = false;                               //Player is not aloud to shoot w
 
 //Rate of fires
 Rate_Of_Fire_Pistol = .33 * room_speed;         //Rate of fire pistol
-Rate_Of_Fire_MachineGun = .165 * room_speed;    //Rate of fire machinegun
-Rate_Of_Fire_MiniGun = .0667 * room_speed;      //Rate of fire minigun
+Rate_Of_Fire_MachineGun = .135 * room_speed;    //Rate of fire machinegun
+Rate_Of_Fire_MiniGun = .0867 * room_speed;      //Rate of fire minigun
 Rate_Of_Fire_Sniper = 2 * room_speed;           //Rate of fire sniper
 Rate_Of_Fire_Rocket = 2.5 * room_speed;         //Rate of fire rocket                                          
                   
@@ -1384,8 +1384,8 @@ else if (playerNum == 2)
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>2</PhysicsObjectDensity>
-  <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
+  <PhysicsObjectDensity>4</PhysicsObjectDensity>
+  <PhysicsObjectRestitution>0.200000002980232</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>1</PhysicsObjectAngularDamping>

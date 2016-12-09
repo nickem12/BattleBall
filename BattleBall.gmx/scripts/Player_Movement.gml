@@ -153,7 +153,7 @@ if(up && (!IsJumping || NumOfJumps < ConsecutiveJumps) && CanJump)          //If
     }
     else                                                                    //Otherwise we are below the maximum charge
     {
-        physics_apply_impulse(x,y,0,JumpingPowerY);                         //Apply linear impulse at the players position 5 units up
+        physics_apply_impulse(x,y,0,JumpingPowerY / (NumOfJumps + 1));        //Apply linear impulse at the players position 5 units up
     }
      ResetCharge();                                                         //Reset the charge
      SpriteState = "Jump";                                                  //Set the sprite state to jump

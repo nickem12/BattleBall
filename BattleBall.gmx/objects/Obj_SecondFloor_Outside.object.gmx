@@ -32,6 +32,8 @@ myAlpha = 1.0;
 Alpha_Timer = room_speed * 0.05;
 increase = false;
 
+
+
 alarm[0] = Alpha_Timer;
 </string>
           </argument>
@@ -123,6 +125,7 @@ else
             <kind>1</kind>
             <string>///Draw the second floor
 draw_sprite_ext(spr_Second_Floor_Outside, 0,x,y,1,1,0,c_white, myAlpha);
+draw_sprite_ext(spr_Second_Floor_Window, 0,656, 184, 1,1,0, c_white, myAlpha);
 </string>
           </argument>
         </arguments>

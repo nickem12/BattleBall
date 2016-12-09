@@ -60,7 +60,7 @@ if(!hasShot)
     }
     else
     {
-        physics_apply_impulse(x,y,strength * dir * 8,random_range(-2000,2000));
+        physics_apply_impulse(x,y,strength * dir * 8,random_range(-3000,3000));
     }
     hasShot = true;
 }
@@ -83,9 +83,9 @@ if(!hasShot)
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>4,4</point>
-    <point>15,4</point>
-    <point>15,15</point>
-    <point>4,15</point>
+    <point>8,6</point>
+    <point>14,6</point>
+    <point>14,12</point>
+    <point>8,12</point>
   </PhysicsShapePoints>
 </object>

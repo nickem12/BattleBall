@@ -94,6 +94,9 @@
     <instance objName="Obj_SecondFloor_Outside" x="666" y="179" name="inst_FA2A388E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Blue_Beam" x="89" y="385" name="inst_3FB109A7" locked="0" code="" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Red_Beam" x="1191" y="378" name="inst_494C973D" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_FloodLight_Light" x="998" y="464" name="inst_121A3C13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_FloodLight_Light" x="387" y="463" name="inst_A0313F4F" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Moonlight" x="655" y="219" name="inst_CF89EACA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

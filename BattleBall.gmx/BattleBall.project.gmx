@@ -400,6 +400,10 @@
         <sprite>sprites\spr_Blue_Beam</sprite>
         <sprite>sprites\spr_Red_Beam</sprite>
       </sprites>
+      <sprites name="Lights">
+        <sprite>sprites\spr_FloodLight_Light</sprite>
+        <sprite>sprites\spr_Moonlight</sprite>
+      </sprites>
     </sprites>
     <sprites name="Menu Items">
       <sprites name="LevelBoxes">
@@ -679,6 +683,10 @@
       </objects>
       <object>objects\Obj_LevelUp_Effect</object>
       <object>objects\Obj_Veli_Explosion_Eff</object>
+      <objects name="Lights">
+        <object>objects\Obj_FloodLight_Light</object>
+        <object>objects\Obj_Moonlight</object>
+      </objects>
     </objects>
     <objects name="Bullets">
       <object>objects\Obj_Bullet_Parent</object>
@@ -745,6 +753,7 @@
         <object>objects\Obj_Small_Table</object>
         <object>objects\Obj_Radio</object>
         <object>objects\Obj_Large_Picture</object>
+        <object>objects\Obj_SecondFloor_Windows</object>
       </objects>
       <objects name="Material Types">
         <object>objects\obj_metal</object>
