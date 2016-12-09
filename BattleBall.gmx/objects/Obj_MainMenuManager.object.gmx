@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -35,6 +35,9 @@ Playhit(choose(snd_explosion1, snd_explosion2, snd_explosion3, RETRO_Explosion_L
 audio_emitter_gain(audio_music, 0.4);
 audio_play_sound_on(audio_music, msc_Shoot_Em__Up,true, 1);
 
+explosion_timer = room_speed * 2.0;
+alarm[1] = explosion_timer;
+
 fadeout = false;
 </string>
           </argument>
@@ -61,6 +64,39 @@ fadeout = false;
             <string>///Destroy the object
 audio_emitter_free(audio_music);
 audio_emitter_free(audio_explosion);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[1] = explosion_timer;
+
+var mx = choose(1,2);
+if(mx == 1)
+{
+    Create_Explosion_eff();
+}
+else
+{
+    Create_Veli_Explosion(random_range(0, room_width), random_range(0,room_height), true);
+}
 </string>
           </argument>
         </arguments>
@@ -146,12 +182,13 @@ if(fadeout)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(Title_Screen, 0, room_width / 2, room_height / 2, 0.5, 0.5, 0, c_white, 1);
+            <string>draw_sprite_ext(Battle_Ball_Logo, 0, room_width / 2, room_height / 2, 0.55,0.55,0,c_white, 1);
+
 
 var d_col = make_colour_rgb(200,200,200);
 draw_set_colour(d_col);
-draw_text(room_width / 2 - 60,room_height / 2 + 100,"A to start Game");
-//draw_sprite_ext(Title,0,room_width / 2, room_height / 2, 2,2,0,c_white,1);
+draw_text(room_width / 2 - 60,room_height / 2 + 200,"A to start Game");
+
 </string>
           </argument>
         </arguments>
