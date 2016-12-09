@@ -35,6 +35,7 @@ Logo_Stay_Time = room_speed * 2;
 timerCounter = 0;
 alarm[0] = Logo_Fade_Time;
 
+audio_voice = audio_emitter_create();
 scale = 0.5;
 </string>
           </argument>
@@ -59,7 +60,9 @@ scale = 0.5;
           <argument>
             <kind>1</kind>
             <string>///Destroy the object
+audio_emitter_free(audio_voice);
 room_goto(rm_menu);
+
 </string>
           </argument>
         </arguments>
@@ -84,18 +87,20 @@ room_goto(rm_menu);
             <kind>1</kind>
             <string>timerCounter++;
 
-if (timerCounter == 6)instance_destroy();
+if (timerCounter == 9)instance_destroy();
 
 switch(timerCounter)
 {
     case 0:
         myAlpha = 0;
         alarm[0] = Logo_Fade_Time;
+        
         break;
     case 3 :
         myAlpha = 0;
         alarm[0] = Logo_Fade_Time;
         if( timerCounter == 3) mySprite = DogHouse_Logo;
+        audio_play_sound_on(audio_voice, snd_Dog_House_Studios, false, 1);
         scale = 1;
         break;
     case 2:
@@ -109,9 +114,25 @@ switch(timerCounter)
     case 1:
         alarm[0] = Logo_Stay_Time;
         myAlpha = 1;
+        audio_play_sound_on(audio_voice, snd_Loogaroo, false, 1);
         break;
     case 4:
         alarm[0] = Logo_Stay_Time;
+        myAlpha = 1;
+        break;
+    case 6:
+        myAlpha = 0;
+        alarm[0] = Logo_Fade_Time;
+        audio_play_sound_on(audio_voice, snd_Lionsault, false, 1);
+        if( timerCounter == 6)mySprite = spr_Lionsault;
+        scale = 0.5;
+        break;
+    case 7:
+        alarm[0] = Logo_Stay_Time;
+        myAlpha = 1;
+        break;
+    case 8:
+        alarm[0] = Logo_Fade_Time;
         myAlpha = 1;
         break;
 }
@@ -137,11 +158,11 @@ switch(timerCounter)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(timerCounter == 0 || timerCounter == 3)
+            <string>if(timerCounter == 0 || timerCounter == 3 || timerCounter == 6)
 {
     myAlpha += 1 / Logo_Fade_Time;
 }
-else if (timerCounter == 2 || timerCounter == 5)
+else if (timerCounter == 2 || timerCounter == 5 || timerCounter == 8)
 {
     myAlpha -= 1 / Logo_Fade_Time;
 }

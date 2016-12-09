@@ -52,7 +52,8 @@ with(global.player2)
     playerNum = 2;
 }
 
-
+audio_voice_em = audio_emitter_create();
+audio_play_sound_on(audio_voice_em, snd_Destroy_Your_Opponent, false, 2);
 
 </string>
           </argument>
@@ -76,7 +77,8 @@ with(global.player2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(GameScore)
+            <string>audio_emitter_free(audio_voice_em);
+with(GameScore)
 {
     instance_destroy();
 }

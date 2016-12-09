@@ -28,9 +28,26 @@
       <sound>sound\Land_on_ground_2</sound>
     </sounds>
     <sounds name="Music">
-      <sound>sound\snd_Music_Test</sound>
-      <sound>sound\BATTLE_MUSIC_2</sound>
-      <sound>sound\BATTLE_MUSIC_1</sound>
+      <sounds name="8_Bit">
+        <sound>sound\msc_Shoot_Em_Up_8bit</sound>
+        <sound>sound\msc_High_Stakes_8bit</sound>
+        <sound>sound\msc_Reckless_8BIT</sound>
+        <sound>sound\msc_Light_it_Up_8bit</sound>
+        <sound>sound\msc_Living_with_the_Devil_8bit</sound>
+        <sound>sound\msc_Running_Wild_8Bit</sound>
+      </sounds>
+      <sounds name="Original">
+        <sound>sound\msc_Living_With_The_Devil</sound>
+        <sound>sound\msc_High_Stakes</sound>
+        <sound>sound\msc_Counting_Down</sound>
+        <sound>sound\msc_Lmb</sound>
+        <sound>sound\msc_Vixen</sound>
+        <sound>sound\msc_Sick_As_It_Gets</sound>
+        <sound>sound\msc_Running_Wild</sound>
+        <sound>sound\msc_Light_It_Up</sound>
+        <sound>sound\msc_Reckless</sound>
+        <sound>sound\msc_Shoot_Em__Up</sound>
+      </sounds>
     </sounds>
     <sounds name="Effects">
       <sound>sound\snd_score</sound>
@@ -71,16 +88,29 @@
       </sounds>
     </sounds>
     <sounds name="Main Menu">
-      <sound>sound\MM_Music4</sound>
-      <sound>sound\MM_Music7</sound>
       <sound>sound\MM_Back</sound>
-      <sound>sound\MM_Music8</sound>
-      <sound>sound\MM_Music2</sound>
-      <sound>sound\MM_Music6</sound>
-      <sound>sound\MM_Crackle</sound>
-      <sound>sound\MM_Music5</sound>
-      <sound>sound\MM_Music1</sound>
-      <sound>sound\MM_Music3</sound>
+    </sounds>
+    <sounds name="Voice Over">
+      <sound>sound\snd_1</sound>
+      <sound>sound\snd_3</sound>
+      <sound>sound\snd_30_Seconds_Remain</sound>
+      <sound>sound\snd_30_Seconds_to_Pumble_your_enemy</sound>
+      <sound>sound\snd_Choose_Your_Class</sound>
+      <sound>sound\snd_Battle</sound>
+      <sound>sound\snd_Destroy_Your_Opponent</sound>
+      <sound>sound\snd_Dog_House_Studios</sound>
+      <sound>sound\snd_Heavy</sound>
+      <sound>sound\snd_Gunsman</sound>
+      <sound>sound\snd_Lionsault</sound>
+      <sound>sound\snd_Support_Us_On_Kickstarter</sound>
+      <sound>sound\snd_Light</sound>
+      <sound>sound\snd_Lose</sound>
+      <sound>sound\snd_Loogaroo</sound>
+      <sound>sound\snd_Win</sound>
+      <sound>sound\snd_Recon</sound>
+      <sound>sound\snd_Battle_Ball</sound>
+      <sound>sound\snd_Competitive_Explosive_Soccer</sound>
+      <sound>sound\snd_2</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -521,6 +551,8 @@
     <sprites name="Company">
       <sprite>sprites\Loogaroo_Logo</sprite>
       <sprite>sprites\DogHouse_Logo</sprite>
+      <sprite>sprites\spr_Lionsault</sprite>
+      <sprite>sprites\Kickstarter</sprite>
     </sprites>
     <sprites name="Score_board">
       <sprite>sprites\Countdown_3</sprite>

@@ -1,4 +1,10 @@
 ///MM_CHOOSE_CLASS()
+if(!said_Choose_Class)
+{
+    said_Choose_Class = true;
+    audio_play_sound_on(audio_voice_em, snd_Choose_Your_Class, false, 1);
+}
+
 global.ShowBars = true;
 global.ShowGunBars = true;
 GetClassInput();                                                                                //Get the input
@@ -22,6 +28,22 @@ else if (btn_Y)
     Playhit(snd_fight, audio_em);
     global.Current_Class = Current_Class_Option;                                                //Set the new class
     Reset_Menu_Timer();
+    
+    switch(global.Class_Type[global.Current_Class])
+    {
+        case "Pistol":
+            audio_play_sound_on(audio_voice_em, snd_Light, false, 1);
+            break;
+        case "MachineGun":
+            audio_play_sound_on(audio_voice_em, snd_Gunsman, false, 1);
+            break;
+        case "Minigun":
+            audio_play_sound_on(audio_voice_em, snd_Heavy, false, 1);
+            break;
+        case "Sniper":
+            audio_play_sound_on(audio_voice_em, snd_Recon, false, 1);
+            break;
+    }
 }
 else if (confirm)                                                                               //If the player is going confirming
 {
