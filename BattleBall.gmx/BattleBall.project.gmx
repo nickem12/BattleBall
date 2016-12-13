@@ -159,6 +159,7 @@
           <sprites name="Level_1">
             <sprite>sprites\spr_Ball_Blue</sprite>
             <sprite>sprites\spr_Ball_Red</sprite>
+            <sprite>sprites\spr_Ball_Glow</sprite>
           </sprites>
         </sprites>
         <sprites name="Score_Board">

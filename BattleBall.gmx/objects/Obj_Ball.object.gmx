@@ -32,6 +32,78 @@ phy_position_x = startXPosition;
 phy_position_y = startYPosition;
 
 hasBeenShot = false;
+
+GlowTime = room_speed * 2;
+Lower = true;
+GlowAlpha = 1.0;
+
+alarm[0] = GlowTime;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(Lower) 
+{
+    Lower = false;
+    GlowAlpha = 0.0;
+}
+else
+{
+    Lower = true;
+    GlowAlpha = 1.0;
+}
+
+alarm[0] = GlowTime;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(Lower)
+{
+    GlowAlpha -= (1.0 / GlowTime);
+}
+else
+{
+    GlowAlpha += (1.0 / GlowTime);
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -184,7 +256,9 @@ Shake_Screen(5);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(hasBeenShot)
+            <string>var Shot = hasBeenShot;
+
+if(hasBeenShot)
 {
     image_index = 1;
     hasBeenShot = false;
@@ -195,6 +269,7 @@ else
 }
 
 draw_self();
+if(!Shot) draw_sprite_ext(spr_Ball_Glow, 0,x,y,1,1,0,c_white, GlowAlpha); //Draw the glow
 </string>
           </argument>
         </arguments>
