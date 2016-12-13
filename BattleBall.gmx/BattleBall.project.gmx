@@ -743,6 +743,7 @@
         <object>objects\Obj_Moonlight</object>
         <object>objects\Obj_Indoor_Light</object>
       </objects>
+      <object>objects\Obj_OGA_Explosion_Eff</object>
     </objects>
     <objects name="Bullets">
       <object>objects\Obj_Bullet_Parent</object>
