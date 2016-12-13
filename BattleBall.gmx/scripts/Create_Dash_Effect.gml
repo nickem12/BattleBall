@@ -14,7 +14,7 @@ if (color == "Red")                                 //If we are the color red
 {
     with(inst)                                      //with inst
     {
-        image_blend = make_colour_rgb(220, 150,150);    //Set the image blend mode
+        //image_blend = make_colour_rgb(220, 150,150);    //Set the image blend mode
     }
 }
 
@@ -22,6 +22,24 @@ if (color == "Blue")                                //If we are the color blue
 {
     with(inst)                                      //With inst
     {
-        image_blend = make_colour_rgb(56, 136, 218);    //Set the image blend mode
+        //image_blend = make_colour_rgb(56, 136, 218);    //Set the image blend mode
+    }
+}
+
+if(color == "Red_P")
+{
+    with(inst)
+    {
+        sprite_index = spr_Red_Dash;
+        image_index = 0;
+    }
+}
+
+if(color == "Blue_P")
+{
+    with(inst)
+    {
+        sprite_index = spr_Blue_Dash;
+        image_index = 0;
     }
 }

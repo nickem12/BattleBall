@@ -77,9 +77,9 @@ if(image_alpha &lt;= 0.05)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_blend_mode(bm_max);
+            <string>//draw_set_blend_mode(bm_max);
 draw_self();
-draw_set_blend_mode(bm_normal);
+//draw_set_blend_mode(bm_normal);
 
 </string>
           </argument>

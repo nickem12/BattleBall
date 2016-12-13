@@ -724,13 +724,13 @@ if (dash &amp;&amp; can_dash &amp;&amp; (axis_lh || axis_lv))                   
 }
 else if (!can_dash &amp;&amp; is_dashing)                                                           //If the player can't dash and is dashing
 {
-    if(playerNum == 1)
+    if(playerNum == 2)
     {
-        Create_Dash_Effect("Red");                                                                   //Create the dash effect
+        Create_Dash_Effect("Red_P");                                                                   //Create the dash effect
     }
-    else if (playerNum == 2)
+    else if (playerNum == 1)
     {
-        Create_Dash_Effect("Blue");
+        Create_Dash_Effect("Blue_P");
     }
 }
 

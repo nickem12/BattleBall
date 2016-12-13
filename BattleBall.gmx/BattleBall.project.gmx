@@ -457,6 +457,10 @@
         <sprite>sprites\spr_Indoor_Light</sprite>
         <sprite>sprites\spr_Moonlight</sprite>
       </sprites>
+      <sprites name="Dash">
+        <sprite>sprites\spr_Red_Dash</sprite>
+        <sprite>sprites\spr_Blue_Dash</sprite>
+      </sprites>
     </sprites>
     <sprites name="Menu Items">
       <sprites name="LevelBoxes">
