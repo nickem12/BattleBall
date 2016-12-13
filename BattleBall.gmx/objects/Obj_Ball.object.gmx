@@ -133,6 +133,8 @@ if (phy_position_x &gt; room_width/2)
     var inst = instance_create(x,y,Obj_Score_Effect);
     global.player1_score++;
     instance_create(global.player1.x, global.player1.y, Obj_Confetti);
+    instance_create(room_width / 2 - 150, 50, Obj_Score_Hand);
+    
 }
 if (phy_position_x &lt; room_width/2)
 {
@@ -140,6 +142,7 @@ if (phy_position_x &lt; room_width/2)
     with(inst)myPlayer = global.player2;
     global.player2_score++;
     instance_create(global.player2.x, global.player2.y, Obj_Confetti);
+    instance_create(room_width / 2 + 150, 50, Obj_Score_Hand);
 }
 
 var SpawnPoint = choose(1,2);

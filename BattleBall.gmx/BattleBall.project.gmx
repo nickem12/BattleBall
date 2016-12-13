@@ -368,6 +368,7 @@
     </sprites>
     <sprites name="Effects">
       <sprite>sprites\MuzzleFlash</sprite>
+      <sprite>sprites\spr_Score_Hand</sprite>
       <sprite>sprites\Bullet_Impact</sprite>
       <sprite>sprites\Dust_Jump</sprite>
       <sprite>sprites\Dust_Land</sprite>
@@ -467,12 +468,6 @@
         <sprite>sprites\Level_NonSelect</sprite>
         <sprite>sprites\Level_Selected</sprite>
       </sprites>
-      <sprites name="ClassIcons">
-        <sprite>sprites\PistolClass</sprite>
-        <sprite>sprites\SniperClass</sprite>
-        <sprite>sprites\MinigunClass</sprite>
-        <sprite>sprites\MachineGunClass</sprite>
-      </sprites>
       <sprites name="PerkIcons">
         <sprite>sprites\TripleJumpPerk</sprite>
         <sprite>sprites\RateOfFirePerk</sprite>
@@ -484,13 +479,6 @@
       <sprites name="Class_Colors">
         <sprite>sprites\Seperator</sprite>
         <sprite>sprites\Top_Banner</sprite>
-      </sprites>
-      <sprites name="Button">
-        <sprite>sprites\Fight</sprite>
-      </sprites>
-      <sprites name="PlayerChoose">
-        <sprite>sprites\Player1_Choose</sprite>
-        <sprite>sprites\Player2_Choose</sprite>
       </sprites>
       <sprites name="MainMenu">
         <sprite>sprites\PlayGame</sprite>
@@ -829,6 +817,7 @@
       <object>objects\Obj_Blue_Beam</object>
       <object>objects\Obj_Red_Beam</object>
       <object>objects\Obj_Main_Menu_Background</object>
+      <object>objects\Obj_Score_Hand</object>
     </objects>
     <objects name="Player">
       <object>objects\Obj_player</object>
