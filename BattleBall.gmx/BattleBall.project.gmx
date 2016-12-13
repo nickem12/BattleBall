@@ -399,6 +399,14 @@
           <sprite>sprites\spr_Short_Straight_1_Red</sprite>
           <sprite>sprites\spr_Short_Straight_2_Red</sprite>
         </sprites>
+        <sprites name="Random">
+          <sprite>sprites\spr_iStock_Explosion_1</sprite>
+          <sprite>sprites\spr_OGA_Explosion_1</sprite>
+          <sprite>sprites\spr_OGA_Explosion_2</sprite>
+          <sprite>sprites\spr_OGA_Explosion_3</sprite>
+          <sprite>sprites\spr_OGA_Smoke_1</sprite>
+          <sprite>sprites\spr_OGA_Explosion_4</sprite>
+        </sprites>
       </sprites>
       <sprites name="Particles">
         <sprite>sprites\spr_chargeup_par</sprite>
