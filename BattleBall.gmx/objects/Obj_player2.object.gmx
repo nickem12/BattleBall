@@ -164,7 +164,7 @@ canShoot = false;                               //Player is not aloud to shoot w
 Rate_Of_Fire_Pistol = .33 * room_speed;         //Rate of fire pistol
 Rate_Of_Fire_MachineGun = .135 * room_speed;    //Rate of fire machinegun
 Rate_Of_Fire_MiniGun = .0867 * room_speed;      //Rate of fire minigun
-Rate_Of_Fire_Sniper = 2 * room_speed;           //Rate of fire sniper
+Rate_Of_Fire_Sniper = 1 * room_speed;           //Rate of fire sniper
 Rate_Of_Fire_Rocket = 2.5 * room_speed;         //Rate of fire rocket                                          
                   
 //Set the kick backs of each gun

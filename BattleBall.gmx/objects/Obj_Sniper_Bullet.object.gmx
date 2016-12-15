@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-strength = 8000;
+strength = 10000;
 mySprite = Sniper_Bullet;
 </string>
           </argument>
@@ -53,15 +53,8 @@ mySprite = Sniper_Bullet;
             <string>///Shoot the sniper bullet
 event_inherited();
 
-if(Aim8Dir)
-{
-    physics_apply_local_force(0, 0, AimX * 8000, AimY * 1000)    
-}
-else
-{
+physics_apply_local_force(0, 0, dir * 10000, 0)
 
-    physics_apply_local_force(0, 0, dir * 8000, 0)
-}
 Create_Dash_Effect("Blue");
 </string>
           </argument>
