@@ -75,24 +75,12 @@ audio_s = audio_emitter_create();
             <kind>1</kind>
             <string>event_inherited();
                                                                                                                                                                                                            //NOTE: Local variables in GML MUST begin with the var keyword
-     if ( phy_position_x &lt; room_width/4 &amp;&amp; phy_position_x &lt; room_width/2)
-        {
-        audio_emitter_position(audio_s, 300, y, 0);
-        }
-        else if ( phy_position_x &lt; room_width/2)
-        {
-        audio_emitter_position(audio_s, 100, y, 0);
-        }
-        if ( phy_position_x &gt; room_width/4 &amp;&amp; phy_position_x &gt; room_width/2)
-        {
-        audio_emitter_position(audio_s, -500, y, 0);
-        }
-        else if ( phy_position_x &gt; room_width/2)
-        {
-        audio_emitter_position(audio_s, -100, y, 0);
-        }  
+    
+        audio_emitter_position(audio_s, x, y, 0);
         
-        Playhit(metal_ping1, audio_s);
+      
+        
+        audio_play_sound_on(audio_s, metal_ping1, false, 1);
      
 </string>
           </argument>

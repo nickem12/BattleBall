@@ -38,6 +38,34 @@ Lower = true;
 GlowAlpha = 1.0;
 
 alarm[0] = GlowTime;
+
+global.ball_audio = audio_emitter_create();
+gain_amount = 0.2;
+audio_emitter_gain(global.ball_audio, gain_amount);
+audio_play_sound_on(global.ball_audio, choose(msc_Shoot_Em_Up_8bit, msc_High_Stakes_8bit, msc_Reckless_8BIT, msc_Light_it_Up_8bit, msc_Living_with_the_Devil_8bit, msc_Running_Wild_8Bit), true,3);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_emitter_free(global.ball_audio);
 </string>
           </argument>
         </arguments>
@@ -103,7 +131,7 @@ else
     GlowAlpha += (1.0 / GlowTime);
 }
 
-
+audio_emitter_position(global.ball_audio, x, y, 0);
 </string>
           </argument>
         </arguments>

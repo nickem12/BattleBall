@@ -57,6 +57,12 @@ Color_ChangeAmount *= -1;
 col = make_colour_rgb(255,255,255);
 
 playerID = 0;
+
+
+
+bull_wizz = audio_emitter_create();
+audio_emitter_gain(bull_wizz, 0.2);
+audio_play_sound_on(bull_wizz, snd_wiz, false, 1);
 </string>
           </argument>
         </arguments>
@@ -151,6 +157,8 @@ else if (Color_Value &lt;= Min_Color_Value)
 }
 
 col = make_color_rgb(Color_Value, Color_Value,Color_Value);
+
+audio_emitter_position(bull_wizz, x,y,0);
 </string>
           </argument>
         </arguments>
@@ -178,7 +186,7 @@ col = make_color_rgb(Color_Value, Color_Value,Color_Value);
     instance_destroy();
    }
    
-
+audio_emitter_free(bull_wizz);
 </string>
           </argument>
         </arguments>
@@ -233,6 +241,8 @@ instance_destroy();
     }
     Create_Explosion_eff();
 }
+
+audio_emitter_free(bull_wizz);
 </string>
           </argument>
         </arguments>
@@ -287,6 +297,8 @@ instance_destroy();
     }
     Create_Explosion_eff();
 }
+
+audio_emitter_free(bull_wizz);
 </string>
           </argument>
         </arguments>
@@ -339,6 +351,8 @@ instance_destroy();
     }
     Create_Explosion_eff();
 }
+
+audio_emitter_free(bull_wizz);
 </string>
           </argument>
         </arguments>

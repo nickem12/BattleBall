@@ -86,6 +86,7 @@
         <sound>sound\snd_levelup_tune</sound>
         <sound>sound\snd_levelup_swipe</sound>
       </sounds>
+      <sound>sound\snd_wiz</sound>
     </sounds>
     <sounds name="Main Menu">
       <sound>sound\MM_Back</sound>
@@ -821,6 +822,7 @@
     </objects>
     <objects name="Player">
       <object>objects\Obj_player</object>
+      <object>objects\Obj_player2</object>
       <object>objects\Obj_PlayerStats</object>
     </objects>
   </objects>

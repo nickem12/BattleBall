@@ -302,7 +302,6 @@ isPlayingWalkingSound = false;
 
 PlayedChargeupSound = false;
 PlayedPrechargeSound = false;
-audio_listener_orientation(0,1,0,0,0,1);
 </string>
           </argument>
         </arguments>
@@ -796,8 +795,10 @@ if(right_trigger &amp;&amp; canShoot)                                           
 {
     var inst;                                                                                                           //Create a local variable called inst to hold the instance ID of the 
                                                                                                                             //created bullet.
-    bull_emit = audio_emitter_create();                                                                                                                         //NOTE: Local variables in GML MUST begin with the var keyword
-    audio_emitter_position(bull_emit, x, y, 0);
+                                                                                                                            //NOTE: Local variables in GML MUST begin with the var keyword
+                                                                                                                             //created bullet.
+    bull_emit2 = audio_emitter_create();                                                                                                                         //NOTE: Local variables in GML MUST begin with the var keyword
+    audio_emitter_position(bull_emit2, x, y, 0);      
         
      numShots++;                                                                                                              
                                         
@@ -806,14 +807,14 @@ if(right_trigger &amp;&amp; canShoot)                                           
     {
         inst = instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_Bullet);                         //Create the bullet
         ShootTimer = Rate_Of_Fire_Pistol;                                                                               //Set the bullet timer (rate of fire)
-        audio_play_sound_on(bull_emit, hand_gun, false, 1);
+        audio_play_sound_on(bull_emit2, hand_gun, false, 1);
         ShotKickBack = PistolGunKickBack;                                                                               //Set the kickback
     }
     else if (myGun == "MachineGun")                                                                        //If the current gun type is machine gun
     {
         inst = instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_MachineGun_Bullet);              //Create the bullet
         ShootTimer = Rate_Of_Fire_MachineGun;                                                                           //Set the shootTimer ( rate of fire)
-        audio_play_sound_on(bull_emit, machine_gun, false, 1);
+        audio_play_sound_on(bull_emit2, machine_gun, false, 1);
         ShotKickBack = MachineGunKickBack;                                                                              //Set the kickback
     }
     else if (myGun == "Minigun")                                                                           //If the current gun type is Minigun
@@ -830,7 +831,7 @@ if(right_trigger &amp;&amp; canShoot)                                           
         
         if(MinigunSoundCounter &gt;= 4)                                                                                    //If the counter is greater than 4 (I found that 4 frames sounded seamless)
         {
-            audio_play_sound_on(bull_emit, mini_gun, false, 1);
+            audio_play_sound_on(bull_emit2, mini_gun, false, 1);
             MinigunSoundCounter = 0;                                                                                    //Reset the counter
         }
         ShotKickBack = MinigunKickBack;                                                                                 //Set the kickback
@@ -839,7 +840,7 @@ if(right_trigger &amp;&amp; canShoot)                                           
     {
         inst = instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_Sniper_Bullet);                  //Create the sniper bullet
         ShootTimer = Rate_Of_Fire_Sniper;                                                                               //Set the shoot timer (rate of fire)
-        audio_play_sound_on(bull_emit, sniper_shot, false, 1); 
+        audio_play_sound_on(bull_emit2, sniper_shot, false, 1); 
         ShotKickBack = SniperKickBack;                                                                                  //Set the kickback
     }
     else if(BulletType == "Rocket")                                                                                  //If the current gun type is pistol
@@ -1077,7 +1078,6 @@ if(!hasPerks)
 LandSoundCounter++;
 
 
-audio_listener_position(x, y, 0);
 </string>
           </argument>
         </arguments>
