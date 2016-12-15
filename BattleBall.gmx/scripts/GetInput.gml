@@ -6,8 +6,7 @@ left =  keyboard_check(vk_left);                                //The left key
 right = keyboard_check(vk_right);                               //The right key
 up_release = keyboard_check_released(vk_up);                    //The up release key
 right_trigger = keyboard_check(ord("I"));                       //The right trigger
-dash = keyboard_check(vk_enter);                                //Dash button    
-
+dash = keyboard_check(vk_enter);                                //Dash button
 //Override control for game pad
 var thresh = 0.5;                                               //The thresh hold
 

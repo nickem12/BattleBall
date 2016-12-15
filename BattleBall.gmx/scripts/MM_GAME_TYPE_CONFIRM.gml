@@ -1,7 +1,7 @@
 ///MM_GAME_TYPE_CONFIRM()
 if(gamepad_is_connected(0))
 {
-    var Num = gamepad_get_device_count();
+    //var Num = gamepad_get_device_count();
     if(Num_Controllers_Connected() == 2)
     {
         Playhit(snd_fight, audio_em);

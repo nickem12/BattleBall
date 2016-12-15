@@ -900,7 +900,7 @@ else if (left_trigger)
             audio_play_sound_on(audio_em, snd_precharge, false,2);
             PlayedPrechargeSound = true;
         }
-    
+    /*
         if(!CreatedChargeParticles &amp;&amp; PlayedPrechargeSound)
         {
         
@@ -917,12 +917,13 @@ else if (left_trigger)
         }
         
         gamepad_set_vibration(gp_id, CurrentCharge, CurrentCharge);                                                      //Set the gamepad vibration    
+    */
     }
     else
     {
         CurrentCharge = MaxCharge;                                                                                       //Clamp the charge to the max charge
-        gamepad_set_vibration(gp_id, CurrentCharge, CurrentCharge);                                                      //Set the gamepad vibration 
-        instance_create(x,y,Obj_Sparkles_Effect);                                                                        //Create some sort of effect   
+        //gamepad_set_vibration(gp_id, CurrentCharge, CurrentCharge);                                                      //Set the gamepad vibration 
+        //instance_create(x,y,Obj_Sparkles_Effect);                                                                        //Create some sort of effect   
         
         
         
@@ -944,7 +945,7 @@ else
         PlayedPrechargeSound = false;
         CreatedChargeParticles = false;
     }
-    gamepad_set_vibration(gp_id, 0,0);                                                                                   //Reset the vibration
+    //gamepad_set_vibration(gp_id, 0,0);                                                                                   //Reset the vibration
 }
 
 
