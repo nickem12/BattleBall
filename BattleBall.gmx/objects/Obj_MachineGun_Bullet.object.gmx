@@ -28,7 +28,14 @@
             <string>event_inherited();
 strength = 2000;
 mySprite = Machine_Bullet;
-
+if(position_meeting(x,y,Obj_Ball))
+{
+    var dir = -image_xscale;
+    with(global.Ball)
+    {
+        physics_apply_impulse(x,y,1000 * dir,0);
+    }
+}
 
 </string>
           </argument>
@@ -85,9 +92,9 @@ if(!hasShot)
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,4</point>
-    <point>22,4</point>
-    <point>22,12</point>
-    <point>0,12</point>
+    <point>2,4</point>
+    <point>18,4</point>
+    <point>18,12</point>
+    <point>2,12</point>
   </PhysicsShapePoints>
 </object>

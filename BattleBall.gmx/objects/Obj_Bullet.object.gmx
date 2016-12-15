@@ -28,6 +28,14 @@
             <string>event_inherited();
 strength = 500;
 mySprite = Bullet;
+if(position_meeting(x,y,Obj_Ball))
+{
+    var dir = -image_xscale;
+    with(global.Ball)
+    {
+        physics_apply_impulse(x,y,250*dir,0);
+    }
+}
 </string>
           </argument>
         </arguments>

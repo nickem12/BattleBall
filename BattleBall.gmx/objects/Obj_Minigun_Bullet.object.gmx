@@ -27,6 +27,14 @@
             <kind>1</kind>
             <string>event_inherited();
 mySprite = Minigun_Bullet;
+if(position_meeting(x,y,Obj_Ball))
+{
+    var dir = -image_xscale;
+    with(global.Ball)
+    {
+        physics_apply_impulse(x,y,100 * dir,0);
+    }
+}
 
 </string>
           </argument>

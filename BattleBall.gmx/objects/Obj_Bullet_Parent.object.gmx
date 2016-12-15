@@ -59,10 +59,10 @@ col = make_colour_rgb(255,255,255);
 playerID = 0;
 
 
-
 bull_wizz = audio_emitter_create();
 audio_emitter_gain(bull_wizz, 0.2);
 audio_play_sound_on(bull_wizz, snd_wiz, false, 1);
+
 </string>
           </argument>
         </arguments>
