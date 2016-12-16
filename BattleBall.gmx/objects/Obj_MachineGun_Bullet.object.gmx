@@ -31,10 +31,12 @@ mySprite = Machine_Bullet;
 if(position_meeting(x,y,Obj_Ball))
 {
     var dir = -image_xscale;
+    instance_destroy();
     with(global.Ball)
     {
         physics_apply_impulse(x,y,1000 * dir,0);
     }
+    
 }
 
 </string>

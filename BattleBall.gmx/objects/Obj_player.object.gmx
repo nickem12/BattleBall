@@ -104,8 +104,10 @@ is_dashing = false;                //Player is not dashing whe they spawn
 dashing_time = 10;                 //How long the player dashes for
 
 smash_attack = false;               //Does the player have the smash attack perk?
-isSmashing = true;                  //Is the player currently smashing?
-SmashCooldown = room_speed * 1;  //Time till the player can smash again
+isSmashing = false;                  //Is the player currently smashing?
+canSmash = false;
+smashCooldownOver = true;
+SmashCooldown = room_speed * 10;  //Time till the player can smash again
 
 //Dash cool down
 drawhalf = false;
@@ -425,6 +427,7 @@ alarm[11] = Frame_Timer;
             <kind>1</kind>
             <string>///Smash alarm
 isSmashing = false;
+smashCooldownOver = true;
 </string>
           </argument>
         </arguments>
@@ -706,10 +709,11 @@ if (dash &amp;&amp; can_dash &amp;&amp; (axis_lh || axis_lv))                   
     alarm[5] = alarm[4] + 10;
     alarm[6] = alarm[5] + 10;                                                             //Set the timer for the currenly dashing (used for dash effect)
     
-    if(smash_attack &amp;&amp; !isSmashing &amp;&amp; vaxis &gt;= 0.7)
+    if(smash_attack &amp;&amp; !isSmashing &amp;&amp; vaxis &gt;= 0.7 &amp;&amp; canSmash)
     {
         isSmashing = true;
         alarm[8] = SmashCooldown;
+        canSmash = false;
         
         audio_emitter_pitch(audio_em,random_range(0.5,1.4));                                    //Set audio_em and play the dash effect
         audio_emitter_gain(audio_em, random_range(0.3, 0.6));
@@ -739,11 +743,6 @@ if(isSmashing)
 {
     instance_create(x,y,Obj_Sparkles_Effect);
 
-    
-    if(!is_dashing)
-    {
-        isSmashing = false;
-    }
 }
 
 </string>

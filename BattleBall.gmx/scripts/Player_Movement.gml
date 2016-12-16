@@ -165,7 +165,15 @@ else if (up_release)                                                        //If
 {
     CanJump = true;                                                         //We can no longer jump    
 }
-
+if(IsJumping)
+{
+canSmash = true;
+smashCooldownOver = false;
+}
+else
+{
+canSmash = false;
+}
 if(position_meeting(phy_position_x, phy_position_y + 20, Obj_Solid) && ! place_meeting(phy_position_x, phy_position_y, Obj_Solid))
 {
     phy_position_y++;
