@@ -31,6 +31,7 @@ Margin = 10;
 MoveCounter = 0;
 Lower = true;       //Are we lowering our selves
 image_speed = 0.5;
+moveIn = true;
 </string>
           </argument>
         </arguments>
@@ -53,10 +54,24 @@ image_speed = 0.5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>MoveCounter++;
-MoveCounter %= 2;
+            <string>if(moveIn)
+{
+    x+=4;
+    y-=3;
+    if(x &gt;= 88 &amp;&amp; y &lt;= 128)
+    {
+        moveIn = false;
+        StartPos = y;
+    }
+}
 
-if(MoveCounter == 0)
+if(!moveIn)
+{
+MoveCounter++;
+MoveCounter %= 2;
+}
+
+if(MoveCounter == 0 &amp;&amp; !moveIn)
 {
     if(Lower)
     {
