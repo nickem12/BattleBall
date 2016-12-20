@@ -190,9 +190,9 @@ if(Countdown_Counter != 0)
     var y_move = random_range(-move_amount, move_amount);
     var rotate  = random_range(-angle, angle);
     
-    draw_sprite_ext(mySpriteLeft, 0, room_width / 2 + x_move - random_range(4, 14), room_height / 2 + y_move, 1,1, rotate, c_white, 1); 
-    draw_sprite_ext(mySpriteRight, 0, room_width / 2 + x_move + random_range(4,14), room_height / 2 + y_move, 1,1,rotate, c_white, 1);
-    draw_sprite_ext(mySprite, 0, room_width / 2 + x_move, room_height / 2 + y_move, 1,1,rotate,c_white, 1);
+    draw_sprite_ext(mySpriteLeft, 0, room_width / 2 + x_move - random_range(4, 14), room_height / 2 - 150 + y_move, .5,.5, rotate, c_white, 1); 
+    draw_sprite_ext(mySpriteRight, 0, room_width / 2 + x_move + random_range(4,14), room_height / 2 - 150 + y_move, .5,.5,rotate, c_white, 1);
+    draw_sprite_ext(mySprite, 0, room_width / 2 + x_move, room_height / 2 - 150 + y_move, .5,.5,rotate,c_white, 1);
 }
 </string>
           </argument>

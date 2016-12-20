@@ -42,7 +42,7 @@ alarm[0] = GlowTime;
 global.ball_audio = audio_emitter_create();
 gain_amount = 0.2;
 audio_emitter_gain(global.ball_audio, gain_amount);
-audio_play_sound_on(global.ball_audio, choose(msc_Shoot_Em_Up_8bit, msc_High_Stakes_8bit, msc_Reckless_8BIT, msc_Light_it_Up_8bit, msc_Living_with_the_Devil_8bit, msc_Running_Wild_8Bit), true,3);
+//audio_play_sound_on(global.ball_audio, choose(msc_Shoot_Em_Up_8bit, msc_High_Stakes_8bit, msc_Reckless_8BIT, msc_Light_it_Up_8bit, msc_Living_with_the_Devil_8bit, msc_Running_Wild_8Bit), true,3);
 </string>
           </argument>
         </arguments>
