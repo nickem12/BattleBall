@@ -822,6 +822,8 @@
     </objects>
     <objects name="Player">
       <object>objects\Obj_player</object>
+      <object>objects\temp_player1</object>
+      <object>objects\temp_player2</object>
       <object>objects\Obj_player2</object>
       <object>objects\Obj_PlayerStats</object>
     </objects>

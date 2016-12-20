@@ -95,7 +95,7 @@ else if (playerNum == 2)                                    //If we are the seco
 {
     if(SpriteState == "Idle")                               //If we are in the idle sprite state
     {
-         switch(global.Current_Class)
+         switch(global.Player2Class)
         {
             case 0:         //Pistol
                 sprite_index = spr_Gavin_Idle_Red;
@@ -113,7 +113,7 @@ else if (playerNum == 2)                                    //If we are the seco
     }
     else if (SpriteState == "Walk_Left" || SpriteState == "Walk_Right")                    //If we are in the walking left sprite state
     {
-        switch(global.Current_Class)
+        switch(global.Player2Class)
         {
             case 0:         //Pistol
                 sprite_index = spr_Gavin_Run_Red;
@@ -133,7 +133,7 @@ else if (playerNum == 2)                                    //If we are the seco
     {
         if(phy_position_y < phy_position_yprevious)
         {
-            switch(global.Current_Class)
+            switch(global.Player2Class)
             {
                 case 0:         //Pistol
                     sprite_index = spr_Gavin_Jump_Red;
@@ -151,7 +151,7 @@ else if (playerNum == 2)                                    //If we are the seco
         }
         else
         {
-            switch(global.Current_Class)
+            switch(global.Player2Class)
             {
                 case 0:         //Pistol
                     sprite_index = spr_Gavin_Fall_Red;

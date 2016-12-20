@@ -798,7 +798,9 @@ if(right_trigger &amp;&amp; canShoot)                                           
         
      numShots++;                                                                                                              
                                         
-    var myGun = global.Class_Gun[global.Current_Class];                                                              
+    //var myGun = global.Class_Gun[global.Current_Class];  
+    var myGun = "MachineGun";
+                                                                
     if(myGun == "Pistol")                                                                                  //If the current gun type is pistol
     {
         inst = instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_Bullet);                         //Create the bullet

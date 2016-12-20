@@ -39,6 +39,9 @@ alarm[0] = Stage_Time;
 
 audio_em = audio_emitter_create();
 audio_voice = audio_emitter_create();
+
+global.t_player1 = instance_create(-40,650,temp_player1);
+global.t_player2 = instance_create(1300,650,temp_player2);
 </string>
           </argument>
         </arguments>
@@ -65,6 +68,14 @@ audio_voice = audio_emitter_create();
 instance_create(x,y,Obj_Game);
 instance_create(x,y,Obj_Game_Timer);
 audio_emitter_free(audio_voice);
+with(global.t_player1)
+{
+instance_destroy();
+}
+with(global.t_player2)
+{
+instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -153,7 +164,7 @@ else if (Countdown_Counter == 4)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(Top_Banner, 0, 0, room_height / 2 - 200, room_width, 400, 0, c_white, 1);
+            <string>//draw_sprite_ext(Top_Banner, 0, 0, room_height / 2 - 200, room_width, 400, 0, c_white, 1);
 
 if(Countdown_Counter != 0)
 {
@@ -181,7 +192,7 @@ if(Countdown_Counter != 0)
     
     draw_sprite_ext(mySpriteLeft, 0, room_width / 2 + x_move - random_range(4, 14), room_height / 2 + y_move, 1,1, rotate, c_white, 1); 
     draw_sprite_ext(mySpriteRight, 0, room_width / 2 + x_move + random_range(4,14), room_height / 2 + y_move, 1,1,rotate, c_white, 1);
-        draw_sprite_ext(mySprite, 0, room_width / 2 + x_move, room_height / 2 + y_move, 1,1,rotate,c_white, 1);
+    draw_sprite_ext(mySprite, 0, room_width / 2 + x_move, room_height / 2 + y_move, 1,1,rotate,c_white, 1);
 }
 </string>
           </argument>

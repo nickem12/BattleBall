@@ -131,6 +131,7 @@ global.Class_Expendable[3] = "Grenade";           //3
 //=================CURRENT_CLASS===========
 global.Total_Num_Classes = 4;                     //The total number of defined classes
 global.Current_Class = 0;                         //Current class (pistol)
+global.Player2Class = 1;
 </string>
           </argument>
         </arguments>
